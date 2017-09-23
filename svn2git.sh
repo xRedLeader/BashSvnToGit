@@ -14,7 +14,7 @@ cd $( ls -ltrd */ | tail -1 | awk '{ print $10 }' )
 
 svn log -q | awk -F '|' '/^r/ {sub("^ ", "", $2); sub(" $", "", $2); print $2" = "$2" <"$2">"}' | sort -u > authors-transform.txt
 
-git svn clone $svnrepo --no-metadata -A authors-transform.txt --stdlayout /Users/smithbc/temp2
+git svn clone $svnrepo --no-metadata -A authors-transform.txt --stdlayout ~/temp2
 
 
 cd $HOME/temp2
